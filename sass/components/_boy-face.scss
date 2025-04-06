@@ -1,0 +1,259 @@
+@use '../abstract' as *;
+
+// *** Dad Face ***
+.boy {
+  position: absolute;
+  top: -2rem;
+  left: 28rem;
+  z-index: 2000;
+
+  clip-path: circle(1% at 50% 50%);
+
+  transition: all 2s;
+
+  @include dimension-settings(25rem, 20rem);
+  @include flex-settings(center, null);
+
+  &.active {
+    left: 0rem;
+
+    animation: clipy 1s linear 2s forwards;
+
+    @media (max-width: 950px) {
+      position: relative;
+      top: 8rem;
+      left: 0rem;
+    }
+  }
+
+  // *** Hair ***
+  &__hair {
+    position: absolute;
+    top: -6rem;
+    z-index: 200;
+
+    background-color: transparent;
+
+    @include dimension-settings(100%, 8rem);
+
+    &-default {
+      position: absolute;
+      left: 50%;
+
+      background-color: orangered;
+      background-color: $color-orange; // Skusit gradient
+      border-radius: 40%;
+
+      @include dimension-settings(20%, 100%);
+    }
+
+    &-01 {
+      left: 0;
+      transform: rotate(-10deg);
+    }
+
+    &-02 {
+      top: -1.5rem;
+      left: 12%;
+      transform: rotate(-10deg);
+
+      @include dimension-settings(20%, 110%);
+    }
+
+    &-03 {
+      top: -1.5rem;
+      left: 20%;
+      transform: rotate(0deg);
+
+      @include dimension-settings(30%, 100%);
+    }
+    &-04 {
+      top: -3rem;
+      left: 40%;
+      transform: rotate(0deg);
+
+      @include dimension-settings(15%, 130%);
+    }
+    &-05 {
+      top: -1.5rem;
+      left: 48%;
+      transform: rotate(0deg);
+
+      @include dimension-settings(30%, 100%);
+    }
+    &-06 {
+      top: -1.5rem;
+      left: 70%;
+      transform: rotate(10deg);
+
+      @include dimension-settings(20%, 110%);
+    }
+    &-07 {
+      left: 80%;
+      transform: rotate(10deg);
+    }
+  }
+  // *** End of Hair ***
+
+  // *** Ears ***
+  &__ear-left,
+  &__ear-right {
+    position: absolute;
+    left: 0;
+    top: 3.8rem;
+    z-index: 150;
+    transform: rotate(-10deg);
+
+    border-radius: 2rem;
+    background-color: $color-bg-boy;
+
+    @include dimension-settings(3rem, 8rem);
+  }
+
+  &__ear-right {
+    left: 88.6%;
+    transform: rotate(10deg);
+  }
+  // *** End of Ears ***
+
+  // *** Head ***
+  &__head {
+    position: relative;
+
+    background-color: $color-bg-boy;
+    border-radius: 0 0 70% 70%;
+
+    @include dimension-settings(80%, 100%);
+
+    // *** Nose ***
+    &-nose {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+
+      @include dimension-settings(4rem, 7rem);
+
+      &-bottom {
+        position: absolute;
+        left: 0.2rem;
+        bottom: 0;
+
+        border-top: 1.25rem solid $color-nose-boy;
+        border-right: 1.9rem solid transparent;
+        border-left: 1.9rem solid transparent;
+        border-bottom: 0 solid transparent;
+      }
+
+      &-right {
+        position: absolute;
+        top: -0.16rem;
+        right: 0.52rem;
+        transform: skew(10deg);
+
+        border-top: 0 solid transparent;
+        border-right: 0.75rem solid transparent;
+        border-left: 0.75rem solid transparent;
+        border-bottom: 6rem solid rgb(192, 147, 130);
+      }
+    }
+    // *** End of Nose ***
+
+    // *** Eyebrows ***
+    &-eyebrow-left,
+    &-eyebrow-right {
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      transform: translate(-20%, -20%) skewX(-50deg);
+
+      background-color: $color-dark;
+      border-radius: 90% 30% 0 30%;
+
+      @include dimension-settings(6rem, 1.35rem);
+    }
+
+    &-eyebrow-right {
+      position: absolute;
+      top: 20%;
+      left: 80%;
+      transform: translate(-80%, -20%) skewX(50deg);
+
+      border-radius: 30% 90% 30% 0;
+    }
+    // *** End of Eyebrows ***
+
+    // *** Eyes ***
+    &-eye-left,
+    &-eye-right {
+      position: absolute;
+      top: 35%;
+      left: 25%;
+      transform: translate(-25%, -35%);
+
+      border-radius: 50%;
+      background-color: $color-dark;
+
+      @include dimension-settings(3rem, 3.5rem);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 1.85rem;
+        left: 1.35rem;
+
+        background-color: $color-light;
+        border-radius: 50%;
+
+        @include dimension-settings(35%, 35%);
+      }
+    }
+
+    &-eye-right {
+      top: 35%;
+      left: 75%;
+      transform: translate(-75%, -35%);
+    }
+
+    // *** End of Eyes ***
+
+    // *** Mouth ***
+    &-mouth {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      border-bottom: 2rem solid $color-red;
+      border-left: 1rem solid transparent;
+      border-right: 1rem solid transparent;
+
+      border-bottom-right-radius: 80%;
+      border-bottom-left-radius: 80%;
+
+      transition: all 1s ease-in-out;
+
+      @include dimension-settings(3.5rem);
+
+      &.smile {
+        border-bottom-right-radius: 80%;
+        border-bottom-left-radius: 80%;
+
+        transition: all 1s ease-in-out;
+
+        @include dimension-settings(8rem, 5rem);
+      }
+
+      &.sad {
+        border-radius: 0;
+
+        transition: all 1s ease-in-out;
+
+        @include dimension-settings(8rem, 5rem);
+      }
+    }
+    // *** End of Mouth ***
+  }
+  // *** End of Head ***
+}
+// *** End of Dad Face ***

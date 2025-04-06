@@ -1,0 +1,57 @@
+@use '../abstract' as *;
+
+// *** Body ***
+body {
+  background-color: $color-dark;
+
+  overflow-x: hidden;
+
+  font-family: 'Roboto', sans-serif;
+
+  @include font-settings(1.5rem, normal, 2rem, 0.1rem);
+  @include dimension-settings(100vw, null, 100vh);
+  @include flex-settings;
+}
+// *** End of Body ***
+
+// *** Container ***
+.container {
+  position: relative;
+
+  margin: 0 1.5rem;
+
+  @include dimension-settings(100%, 100%, null, 100rem);
+  @include flex-settings($direction: column, $gap: 15rem);
+
+  @media (max-width: 950px) {
+    @include flex-settings($direction: column, $gap: 11.5rem);
+  }
+}
+// *** End of Container ***
+
+// *** Heading Primary ***
+.heading__primary {
+  position: relative;
+
+  color: $color-light;
+
+  animation: text-flaming 2s linear infinite;
+
+  text-align: center;
+  font-family: 'Lobster', sans-serif;
+
+  @include font-settings(8rem);
+  @include dimension-settings(100%);
+
+  &::before {
+    content: 'Boy Face Css Art';
+    position: absolute;
+    bottom: -7rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include font-settings(3rem, 600, 2rem, 0.1rem);
+    @include dimension-settings(100%);
+  }
+}
+// *** End of Heading Primary ***

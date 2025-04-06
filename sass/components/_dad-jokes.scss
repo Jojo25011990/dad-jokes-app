@@ -1,0 +1,83 @@
+@use '../abstract' as *;
+
+// *** Dad Jokes ***
+.dad-jokes {
+  position: relative;
+
+  background-color: $color-yellow-bg;
+  color: $color-dark;
+
+  padding: 4rem;
+
+  border-radius: 2rem;
+
+  animation: box-flaming 2s linear forwards;
+
+  @include dimension-settings(100%, 30rem, null, 50rem);
+  @include flex-settings;
+
+  @media (max-width: 550px) {
+    padding: 3rem;
+    @include dimension-settings(100%, 25rem, null, 50rem);
+  }
+
+  // *** Joke ***
+  &-joke {
+    text-align: center;
+
+    @include font-settings(2rem, normal, 2.6rem, 0.1rem);
+
+    @media (max-width: 550px) {
+      @include font-settings(1.65rem, normal, 2.6rem, 0.1rem);
+    }
+    @media (max-width: 400px) {
+      @include font-settings(1.35rem, normal, 2.2rem, 0.1rem);
+    }
+  }
+  // *** End of Joke ***
+
+  // *** Button ***
+  &-btn {
+    position: absolute;
+    bottom: calc(-5.6rem / 2);
+    z-index: 50;
+
+    color: $color-dark;
+    background-color: inherit;
+
+    border-radius: 1.5rem;
+    box-shadow: 0.1rem 0.1rem 0.7rem $color-dark;
+
+    cursor: pointer;
+    scale: 1;
+
+    transition: all 0.3s;
+
+    @include dimension-settings(100%, 5.6rem, null, 20rem);
+    @include font-settings(2rem, 700);
+
+    @media (max-width: 550px) {
+      @include dimension-settings(100%, 4.6rem, null, 18rem);
+      @include font-settings(1.6rem, 700);
+      bottom: calc(-4.6rem / 2);
+    }
+
+    &:hover,
+    &:active {
+      color: $color-light;
+      background-color: $color-dark;
+
+      text-shadow: 0 -0.1rem 0.1rem $color-light, 0 -0.2rem 0.5rem $color-yellow,
+        0 -0.5rem 1rem $color-orange, 0 -0.9rem 2rem $color-red;
+
+      scale: 1.5;
+
+      @media (max-width: 550px) {
+        scale: 1.3;
+      }
+    }
+  }
+
+  // *** End of Button ***
+}
+// *** End of Dad Jokes ***

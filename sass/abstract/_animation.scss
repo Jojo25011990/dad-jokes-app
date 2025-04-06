@@ -1,0 +1,59 @@
+@use './variables' as *;
+
+// *** Text Flaming ***
+@keyframes text-flaming {
+  0%,
+  100% {
+    text-shadow: 0 -0.1rem 0.2rem $color-light, 0 -0.2rem 0.7rem $color-yellow,
+      0 -0.7rem 1rem $color-orange, 0 -1.2rem 2rem $color-red;
+  }
+
+  50% {
+    text-shadow: 0 -0.1rem 4px $color-light, 0 -0.2rem 1rem $color-yellow,
+      0 -1rem 2rem $color-orange, 0 -1.8rem 4rem $color-red;
+  }
+}
+// *** End of Text Flaming ***
+
+// *** Box Flaming ***
+@keyframes box-flaming {
+  0% {
+    box-shadow: 0 -0.1rem 0.1rem $color-light, 0 -0.1rem 0.1rem $color-yellow,
+      0 -0.1rem 0.1rem $color-orange, 0 -0.1rem 0.1rem $color-red;
+  }
+
+  100% {
+    box-shadow: 0 -0.1rem 4px $color-light, 0 -0.2rem 1rem $color-yellow,
+      0 -1rem 2rem $color-orange, 0 -1.8rem 4rem $color-red;
+  }
+}
+// *** End of Box Flaming ***
+
+// *** Boy Animations ***
+// ------------------------
+// *** Smile ***
+@keyframes smile {
+  0%,
+  100% {
+    border-bottom-right-radius: 80%;
+    border-bottom-left-radius: 80%;
+  }
+
+  50% {
+    border-bottom-right-radius: 0%;
+    border-bottom-left-radius: 0%;
+  }
+}
+// *** End of Smile ***
+
+// *** Clipy ***
+@keyframes clipy {
+  0% {
+    clip-path: circle(1% at 50% 50%);
+  }
+
+  100% {
+    clip-path: circle(150% at 50% 50%);
+  }
+}
+// *** End of Clipy ***

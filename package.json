@@ -1,0 +1,18 @@
+{
+  "name": "dad-jokes",
+  "version": "1.0.0",
+  "description": "- Css Art Google Logo + Beautiful Text Shadow Effect .",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e scss -x \"npm run sass\"",
+    "sass": "sass sass/main.scss css/style.css --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "sass": "^1.86.3"
+  }
+}

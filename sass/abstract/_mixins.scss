@@ -1,0 +1,50 @@
+// *** Font Settings ***
+@mixin font-settings(
+  $size,
+  $weight: null,
+  $line-height: null,
+  $l-spacing: null
+) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $l-spacing;
+}
+
+// *** Flexbox Settings ****
+@mixin flex-settings(
+  $justify: center,
+  $align: center,
+  $direction: null,
+  $gap: null
+) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+// *** Dimensions Settings ***
+@mixin dimension-settings(
+  $width: null,
+  $height: null,
+  $min-height: null,
+  $max-width: null
+) {
+  @if $width {
+    width: $width;
+  }
+  @if $height {
+    height: $height;
+  }
+  @if $min-height {
+    min-height: $min-height;
+  }
+  @if $max-width {
+    max-width: $max-width;
+  }
+}
