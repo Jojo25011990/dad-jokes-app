@@ -40,9 +40,25 @@
       position: absolute;
       left: 50%;
 
-      background-color: orangered;
-      background-color: $color-orange; // Skusit gradient
       border-radius: 40%;
+
+      // *** Version 03 ***
+      background-color: orangered;
+      // *** End of Version 03 ***
+
+      // *** Version 02 ***
+      //   background: linear-gradient(
+      //     to top,
+
+      //     $color-yellow 0%,
+      //     $color-orange 8%,
+      //     $color-red 100%
+      //   );
+      // *** End of Version 02 ***
+
+      // *** Version 01 - Main ***
+      background-color: $color-orange;
+      // *** End of Version 01 - Main ***
 
       @include dimension-settings(20%, 100%);
     }

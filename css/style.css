@@ -202,9 +202,9 @@ body {
 .boy__hair-default {
   position: absolute;
   left: 50%;
+  border-radius: 40%;
   background-color: orangered;
   background-color: #ff8000;
-  border-radius: 40%;
   width: 20%;
   height: 100%;
 }
