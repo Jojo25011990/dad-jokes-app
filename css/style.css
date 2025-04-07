@@ -126,7 +126,7 @@ body {
 
 .container {
   position: relative;
-  margin: 0 1.5rem;
+  margin: 2rem 1.5rem;
   width: 100%;
   height: 100%;
   max-width: 100rem;
@@ -155,6 +155,11 @@ body {
   font-size: 8rem;
   width: 100%;
 }
+@media (max-width: 550px) {
+  .heading__primary {
+    font-size: 7rem;
+  }
+}
 .heading__primary::before {
   content: "Boy Face Css Art";
   position: absolute;
@@ -179,6 +184,14 @@ body {
   height: 20rem;
   display: flex;
   justify-content: center;
+}
+@media (max-width: 550px) {
+  .boy {
+    position: absolute;
+    top: -2rem;
+    left: 35rem;
+    scale: 0.9;
+  }
 }
 .boy.active {
   left: 0rem;

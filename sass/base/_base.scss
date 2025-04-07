@@ -18,7 +18,7 @@ body {
 .container {
   position: relative;
 
-  margin: 0 1.5rem;
+  margin: 2rem 1.5rem;
 
   @include dimension-settings(100%, 100%, null, 100rem);
   @include flex-settings($direction: column, $gap: 15rem);
@@ -42,6 +42,10 @@ body {
 
   @include font-settings(8rem);
   @include dimension-settings(100%);
+
+  @media (max-width: 550px) {
+    @include font-settings(7rem);
+  }
 
   &::before {
     content: 'Boy Face Css Art';

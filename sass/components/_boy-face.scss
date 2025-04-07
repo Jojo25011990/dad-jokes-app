@@ -14,6 +14,13 @@
   @include dimension-settings(25rem, 20rem);
   @include flex-settings(center, null);
 
+  @media (max-width: 550px) {
+    position: absolute;
+    top: -2rem;
+    left: 35rem;
+    scale: 0.9;
+  }
+
   &.active {
     left: 0rem;
 
